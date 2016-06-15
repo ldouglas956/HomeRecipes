@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E116A8A1CF00D950032C39A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E116A841CF00D950032C39A /* Recipe.swift */; };
+		8E116A8E1CF00D950032C39A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E116A881CF00D950032C39A /* Category.swift */; };
+		8E116A941CF00F170032C39A /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E116A931CF00F170032C39A /* CategoryVC.swift */; };
+		8E116A961CF00F2D0032C39A /* RecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E116A951CF00F2D0032C39A /* RecipesVC.swift */; };
+		8E116A981CF00F3D0032C39A /* AddRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E116A971CF00F3D0032C39A /* AddRecipeVC.swift */; };
+		8E19ACB81D05515F00CD0993 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19ACB61D05515F00CD0993 /* Category+CoreDataProperties.swift */; };
+		8E19ACB91D05515F00CD0993 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19ACB71D05515F00CD0993 /* Recipe+CoreDataProperties.swift */; };
+		8E2276331D0F054000B2874E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2276321D0F054000B2874E /* Assets.xcassets */; };
+		8E769E051CE59D3F0015139A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E769E041CE59D3F0015139A /* AppDelegate.swift */; };
+		8E769E0A1CE59D3F0015139A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E769E081CE59D3F0015139A /* Main.storyboard */; };
+		8E769E0D1CE59D3F0015139A /* Rutherfordium.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E769E0B1CE59D3F0015139A /* Rutherfordium.xcdatamodeld */; };
+		8E769E121CE59D3F0015139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E769E101CE59D3F0015139A /* LaunchScreen.storyboard */; };
+		8E769E1D1CE59D3F0015139A /* RutherfordiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E769E1C1CE59D3F0015139A /* RutherfordiumTests.swift */; };
+		8E769E281CE59D3F0015139A /* RutherfordiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E769E271CE59D3F0015139A /* RutherfordiumUITests.swift */; };
+		8E77C94E1D0DEAC8003B0B9D /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77C94C1D0DEAC8003B0B9D /* AkiraTextField.swift */; };
+		8E77C94F1D0DEAC8003B0B9D /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77C94D1D0DEAC8003B0B9D /* TextFieldsEffects.swift */; };
+		8E77C9511D0E0006003B0B9D /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77C9501D0E0006003B0B9D /* CustomPicker.swift */; };
+		8EB668321CE6821100E0A75A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB668311CE6821100E0A75A /* CategoryCell.swift */; };
+		8EB668341CEA5AA500E0A75A /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB668331CEA5AA400E0A75A /* RecipeCell.swift */; };
+		8ECAD5471D09EB9500B8995D /* RotatedImageFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD5461D09EB9500B8995D /* RotatedImageFix.swift */; };
+		8ECAD5621D0A905900B8995D /* CustomUINavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD5611D0A905900B8995D /* CustomUINavController.swift */; };
+		8ED29A6C1D07D0B100175CAF /* SampleRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED29A6B1D07D0B100175CAF /* SampleRecipes.swift */; };
+		8ED29A6E1D07D93800175CAF /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED29A6D1D07D93800175CAF /* Categories.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E769E191CE59D3F0015139A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E769DF91CE59D3F0015139A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E769E001CE59D3F0015139A;
+			remoteInfo = Rutherfordium;
+		};
+		8E769E241CE59D3F0015139A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E769DF91CE59D3F0015139A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E769E001CE59D3F0015139A;
+			remoteInfo = Rutherfordium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E116A841CF00D950032C39A /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ../Recipe.swift; sourceTree = "<group>"; };
+		8E116A881CF00D950032C39A /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
+		8E116A931CF00F170032C39A /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		8E116A951CF00F2D0032C39A /* RecipesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesVC.swift; sourceTree = "<group>"; };
+		8E116A971CF00F3D0032C39A /* AddRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeVC.swift; sourceTree = "<group>"; };
+		8E19ACB61D05515F00CD0993 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E19ACB71D05515F00CD0993 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8E2276321D0F054000B2874E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E769E011CE59D3F0015139A /* Rutherfordium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rutherfordium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E769E041CE59D3F0015139A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E769E091CE59D3F0015139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E769E0C1CE59D3F0015139A /* Rutherfordium.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rutherfordium.xcdatamodel; sourceTree = "<group>"; };
+		8E769E111CE59D3F0015139A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E769E131CE59D3F0015139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E769E181CE59D3F0015139A /* RutherfordiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RutherfordiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E769E1C1CE59D3F0015139A /* RutherfordiumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutherfordiumTests.swift; sourceTree = "<group>"; };
+		8E769E1E1CE59D3F0015139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E769E231CE59D3F0015139A /* RutherfordiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RutherfordiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E769E271CE59D3F0015139A /* RutherfordiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutherfordiumUITests.swift; sourceTree = "<group>"; };
+		8E769E291CE59D3F0015139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E77C94C1D0DEAC8003B0B9D /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
+		8E77C94D1D0DEAC8003B0B9D /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		8E77C9501D0E0006003B0B9D /* CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		8EB668311CE6821100E0A75A /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8EB668331CEA5AA400E0A75A /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		8ECAD5461D09EB9500B8995D /* RotatedImageFix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatedImageFix.swift; sourceTree = "<group>"; };
+		8ECAD5611D0A905900B8995D /* CustomUINavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUINavController.swift; sourceTree = "<group>"; };
+		8ED29A6B1D07D0B100175CAF /* SampleRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleRecipes.swift; sourceTree = "<group>"; };
+		8ED29A6D1D07D93800175CAF /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E769DFE1CE59D3F0015139A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E769E151CE59D3F0015139A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E769E201CE59D3F0015139A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E116A621CF00A040032C39A /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				8E19ACB71D05515F00CD0993 /* Recipe+CoreDataProperties.swift */,
+				8E19ACB61D05515F00CD0993 /* Category+CoreDataProperties.swift */,
+			);
+			name = Generated;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8E769DF81CE59D3E0015139A = {
+			isa = PBXGroup;
+			children = (
+				8E769E031CE59D3F0015139A /* Rutherfordium */,
+				8E769E1B1CE59D3F0015139A /* RutherfordiumTests */,
+				8E769E261CE59D3F0015139A /* RutherfordiumUITests */,
+				8E769E021CE59D3F0015139A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E769E021CE59D3F0015139A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E769E011CE59D3F0015139A /* Rutherfordium.app */,
+				8E769E181CE59D3F0015139A /* RutherfordiumTests.xctest */,
+				8E769E231CE59D3F0015139A /* RutherfordiumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E769E031CE59D3F0015139A /* Rutherfordium */ = {
+			isa = PBXGroup;
+			children = (
+				8E769E381CE59E270015139A /* MODEL */,
+				8E769E361CE59E1C0015139A /* VIEW */,
+				8E769E371CE59E220015139A /* CONTROLLER */,
+				8E769E351CE59E110015139A /* Supporting Files */,
+			);
+			path = Rutherfordium;
+			sourceTree = "<group>";
+		};
+		8E769E1B1CE59D3F0015139A /* RutherfordiumTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E769E1C1CE59D3F0015139A /* RutherfordiumTests.swift */,
+				8E769E1E1CE59D3F0015139A /* Info.plist */,
+			);
+			path = RutherfordiumTests;
+			sourceTree = "<group>";
+		};
+		8E769E261CE59D3F0015139A /* RutherfordiumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E769E271CE59D3F0015139A /* RutherfordiumUITests.swift */,
+				8E769E291CE59D3F0015139A /* Info.plist */,
+			);
+			path = RutherfordiumUITests;
+			sourceTree = "<group>";
+		};
+		8E769E351CE59E110015139A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E769E041CE59D3F0015139A /* AppDelegate.swift */,
+				8E2276321D0F054000B2874E /* Assets.xcassets */,
+				8E769E131CE59D3F0015139A /* Info.plist */,
+				8E769E0B1CE59D3F0015139A /* Rutherfordium.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E769E361CE59E1C0015139A /* VIEW */ = {
+			isa = PBXGroup;
+			children = (
+				8E769E081CE59D3F0015139A /* Main.storyboard */,
+				8E769E101CE59D3F0015139A /* LaunchScreen.storyboard */,
+				8EB668311CE6821100E0A75A /* CategoryCell.swift */,
+				8EB668331CEA5AA400E0A75A /* RecipeCell.swift */,
+				8ECAD5461D09EB9500B8995D /* RotatedImageFix.swift */,
+				8ECAD5611D0A905900B8995D /* CustomUINavController.swift */,
+				8E77C9521D0E0010003B0B9D /* TextFieldsEffects */,
+				8E77C9501D0E0006003B0B9D /* CustomPicker.swift */,
+			);
+			name = VIEW;
+			sourceTree = "<group>";
+		};
+		8E769E371CE59E220015139A /* CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+				8E116A931CF00F170032C39A /* CategoryVC.swift */,
+				8E116A951CF00F2D0032C39A /* RecipesVC.swift */,
+				8E116A971CF00F3D0032C39A /* AddRecipeVC.swift */,
+			);
+			name = CONTROLLER;
+			sourceTree = "<group>";
+		};
+		8E769E381CE59E270015139A /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+				8ED29A6D1D07D93800175CAF /* Categories.swift */,
+				8ED29A6B1D07D0B100175CAF /* SampleRecipes.swift */,
+				8E116A841CF00D950032C39A /* Recipe.swift */,
+				8E116A881CF00D950032C39A /* Category.swift */,
+				8E116A621CF00A040032C39A /* Generated */,
+			);
+			name = MODEL;
+			sourceTree = "<group>";
+		};
+		8E77C9521D0E0010003B0B9D /* TextFieldsEffects */ = {
+			isa = PBXGroup;
+			children = (
+				8E77C94D1D0DEAC8003B0B9D /* TextFieldsEffects.swift */,
+				8E77C94C1D0DEAC8003B0B9D /* AkiraTextField.swift */,
+			);
+			name = TextFieldsEffects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E769E001CE59D3F0015139A /* Rutherfordium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E769E2C1CE59D3F0015139A /* Build configuration list for PBXNativeTarget "Rutherfordium" */;
+			buildPhases = (
+				8E769DFD1CE59D3F0015139A /* Sources */,
+				8E769DFE1CE59D3F0015139A /* Frameworks */,
+				8E769DFF1CE59D3F0015139A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rutherfordium;
+			productName = Rutherfordium;
+			productReference = 8E769E011CE59D3F0015139A /* Rutherfordium.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E769E171CE59D3F0015139A /* RutherfordiumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E769E2F1CE59D3F0015139A /* Build configuration list for PBXNativeTarget "RutherfordiumTests" */;
+			buildPhases = (
+				8E769E141CE59D3F0015139A /* Sources */,
+				8E769E151CE59D3F0015139A /* Frameworks */,
+				8E769E161CE59D3F0015139A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E769E1A1CE59D3F0015139A /* PBXTargetDependency */,
+			);
+			name = RutherfordiumTests;
+			productName = RutherfordiumTests;
+			productReference = 8E769E181CE59D3F0015139A /* RutherfordiumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8E769E221CE59D3F0015139A /* RutherfordiumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E769E321CE59D3F0015139A /* Build configuration list for PBXNativeTarget "RutherfordiumUITests" */;
+			buildPhases = (
+				8E769E1F1CE59D3F0015139A /* Sources */,
+				8E769E201CE59D3F0015139A /* Frameworks */,
+				8E769E211CE59D3F0015139A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E769E251CE59D3F0015139A /* PBXTargetDependency */,
+			);
+			name = RutherfordiumUITests;
+			productName = RutherfordiumUITests;
+			productReference = 8E769E231CE59D3F0015139A /* RutherfordiumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E769DF91CE59D3F0015139A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Lance Douglas";
+				TargetAttributes = {
+					8E769E001CE59D3F0015139A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CEZ4N6DZ75;
+					};
+					8E769E171CE59D3F0015139A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8E769E001CE59D3F0015139A;
+					};
+					8E769E221CE59D3F0015139A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8E769E001CE59D3F0015139A;
+					};
+				};
+			};
+			buildConfigurationList = 8E769DFC1CE59D3F0015139A /* Build configuration list for PBXProject "Rutherfordium" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E769DF81CE59D3E0015139A;
+			productRefGroup = 8E769E021CE59D3F0015139A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E769E001CE59D3F0015139A /* Rutherfordium */,
+				8E769E171CE59D3F0015139A /* RutherfordiumTests */,
+				8E769E221CE59D3F0015139A /* RutherfordiumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E769DFF1CE59D3F0015139A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E769E121CE59D3F0015139A /* LaunchScreen.storyboard in Resources */,
+				8E769E0A1CE59D3F0015139A /* Main.storyboard in Resources */,
+				8E2276331D0F054000B2874E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E769E161CE59D3F0015139A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E769E211CE59D3F0015139A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E769DFD1CE59D3F0015139A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E77C94E1D0DEAC8003B0B9D /* AkiraTextField.swift in Sources */,
+				8E769E051CE59D3F0015139A /* AppDelegate.swift in Sources */,
+				8ECAD5471D09EB9500B8995D /* RotatedImageFix.swift in Sources */,
+				8E769E0D1CE59D3F0015139A /* Rutherfordium.xcdatamodeld in Sources */,
+				8EB668341CEA5AA500E0A75A /* RecipeCell.swift in Sources */,
+				8E116A981CF00F3D0032C39A /* AddRecipeVC.swift in Sources */,
+				8E116A941CF00F170032C39A /* CategoryVC.swift in Sources */,
+				8E116A961CF00F2D0032C39A /* RecipesVC.swift in Sources */,
+				8E77C9511D0E0006003B0B9D /* CustomPicker.swift in Sources */,
+				8E116A8A1CF00D950032C39A /* Recipe.swift in Sources */,
+				8ED29A6C1D07D0B100175CAF /* SampleRecipes.swift in Sources */,
+				8E77C94F1D0DEAC8003B0B9D /* TextFieldsEffects.swift in Sources */,
+				8E19ACB81D05515F00CD0993 /* Category+CoreDataProperties.swift in Sources */,
+				8E19ACB91D05515F00CD0993 /* Recipe+CoreDataProperties.swift in Sources */,
+				8E116A8E1CF00D950032C39A /* Category.swift in Sources */,
+				8ECAD5621D0A905900B8995D /* CustomUINavController.swift in Sources */,
+				8EB668321CE6821100E0A75A /* CategoryCell.swift in Sources */,
+				8ED29A6E1D07D93800175CAF /* Categories.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E769E141CE59D3F0015139A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E769E1D1CE59D3F0015139A /* RutherfordiumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E769E1F1CE59D3F0015139A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E769E281CE59D3F0015139A /* RutherfordiumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E769E1A1CE59D3F0015139A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E769E001CE59D3F0015139A /* Rutherfordium */;
+			targetProxy = 8E769E191CE59D3F0015139A /* PBXContainerItemProxy */;
+		};
+		8E769E251CE59D3F0015139A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E769E001CE59D3F0015139A /* Rutherfordium */;
+			targetProxy = 8E769E241CE59D3F0015139A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E769E081CE59D3F0015139A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E769E091CE59D3F0015139A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E769E101CE59D3F0015139A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E769E111CE59D3F0015139A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E769E2A1CE59D3F0015139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E769E2B1CE59D3F0015139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E769E2D1CE59D3F0015139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Rutherfordium/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LanceDouglas.Rutherfordium;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8E769E2E1CE59D3F0015139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Rutherfordium/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LanceDouglas.Rutherfordium;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8E769E301CE59D3F0015139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RutherfordiumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LanceDouglas.RutherfordiumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rutherfordium.app/Rutherfordium";
+			};
+			name = Debug;
+		};
+		8E769E311CE59D3F0015139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RutherfordiumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LanceDouglas.RutherfordiumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rutherfordium.app/Rutherfordium";
+			};
+			name = Release;
+		};
+		8E769E331CE59D3F0015139A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RutherfordiumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LanceDouglas.RutherfordiumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Rutherfordium;
+			};
+			name = Debug;
+		};
+		8E769E341CE59D3F0015139A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RutherfordiumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LanceDouglas.RutherfordiumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Rutherfordium;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E769DFC1CE59D3F0015139A /* Build configuration list for PBXProject "Rutherfordium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E769E2A1CE59D3F0015139A /* Debug */,
+				8E769E2B1CE59D3F0015139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E769E2C1CE59D3F0015139A /* Build configuration list for PBXNativeTarget "Rutherfordium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E769E2D1CE59D3F0015139A /* Debug */,
+				8E769E2E1CE59D3F0015139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E769E2F1CE59D3F0015139A /* Build configuration list for PBXNativeTarget "RutherfordiumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E769E301CE59D3F0015139A /* Debug */,
+				8E769E311CE59D3F0015139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E769E321CE59D3F0015139A /* Build configuration list for PBXNativeTarget "RutherfordiumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E769E331CE59D3F0015139A /* Debug */,
+				8E769E341CE59D3F0015139A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E769E0B1CE59D3F0015139A /* Rutherfordium.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E769E0C1CE59D3F0015139A /* Rutherfordium.xcdatamodel */,
+			);
+			currentVersion = 8E769E0C1CE59D3F0015139A /* Rutherfordium.xcdatamodel */;
+			path = Rutherfordium.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8E769DF91CE59D3F0015139A /* Project object */;
+}
