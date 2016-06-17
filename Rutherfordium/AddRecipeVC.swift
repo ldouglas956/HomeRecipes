@@ -89,6 +89,7 @@ class AddRecipeVC: UIViewController, UINavigationControllerDelegate, UIPickerVie
 			
 			if let name = recipe.name {
 				nameField.text = name
+				self.navigationItem.title = name
 			}
 			if let time = recipe.time {
 				timeField.text = "\(time)"
