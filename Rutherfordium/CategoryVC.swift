@@ -28,7 +28,7 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 
 		tableView.delegate = self
 		tableView.dataSource = self
-		setTitleImage()
+		setNavTitle()
 		
 		
 		fetchCategories()
@@ -57,7 +57,7 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 	
 	
 	// MARK: Set Title Image
-	func setTitleImage() {
+	func setNavTitle() {
 		// Image
 //		let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
 //		imageView.contentMode = .ScaleAspectFit
@@ -103,7 +103,7 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 9
+		return allCategories.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

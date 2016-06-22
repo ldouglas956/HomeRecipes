@@ -21,6 +21,7 @@ class Categories {
 		let category7 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
 		let category8 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
 		let category9 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
+		let category10 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
 		
 		category1.title = "7) Breakfast"
 		category2.title = "6) Dessert"
@@ -31,6 +32,7 @@ class Categories {
 		category7.title = "8) Snacks"
 		category8.title = "2) Soup / Chili"
 		category9.title = "1) Appetizers"
+		category10.title = "9) Other"
 		
 		category1.setCatImage(UIImage(named: "breakfast")!)
 		category2.setCatImage(UIImage(named: "dessert")!)
@@ -41,6 +43,7 @@ class Categories {
 		category7.setCatImage(UIImage(named: "snacks")!)
 		category8.setCatImage(UIImage(named: "soup")!)
 		category9.setCatImage(UIImage(named: "appetizers")!)
+		category10.setCatImage(UIImage(named: "Launch2")!)
 		
 		ad.saveContext()
 	}

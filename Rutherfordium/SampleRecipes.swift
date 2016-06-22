@@ -51,25 +51,25 @@ class SampleRecipes {
 		
 		// 3) Salad
 		let recipe3 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
-		recipe3.name = "Caesar Salad"
-		recipe3.setRecipeImage(UIImage(named: "caesar")!)
+		recipe3.name = "Basil Pesto Pasta Salad"
+		recipe3.setRecipeImage(UIImage(named: "pastaSalad")!)
 		recipe3.category = allCategories[2]
-		recipe3.servings = 6
-		recipe3.time = 10
-		recipe3.ingredients = "-Link Below"
-		recipe3.directions = "-Homemade crutons part of recipe"
-		recipe3.link = "http://www.bonappetit.com/recipe/classic-caesar-salad"
+		recipe3.servings = 4
+		recipe3.time = 20
+		recipe3.ingredients = "-1 medium head of broccoli, chopped\n-half a head of cauliflower (or 2-3 cups)\n-3 organic carrots, chopped\n-1 red bell pepper, chopped\n-3 cloves of garlic\n-1/2 cup of pine nuts\n-2 cups of fresh basil leaves, washed and stems removed\n-4 TBSP lemon juice\n-dash of kosher salt\n-2 TBSP of olive oil\n-pinch of freshly ground black pepper\n-1-2 (12 oz.) boxes of gluten free fusilli pasta (Jovial is the brand I used from Whole Foods)"
+		recipe3.directions = "-Cook pasta according to package directions until al dente. While pasta is cooking, mix the pine nuts, basil, lemon juice, salt, pepper, and olive oil in a food processor or a high powered blender, and puree until smooth.\n-Place vegetables in a large mixing bowl and set aside.\n-Drain pasta and pour hot pasta water over vegetables. Blanch vegetables in pasta water for 3 minutes. Drain blanched vegetables, add cooked pasta and approximately 2 TBS of the pesto sauce and toss gently until mixed.\n-Refrigerate for 2-3 hours for flavors to marinate."
+		recipe3.link = "https://holdthecheeseplease.com/2016/06/18/basil-pesto-pasta-salad/"
 		
 		// 4) Main Course
 		let recipe4 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
-		recipe4.name = "Skillet Chicken and Ravioli"
-		recipe4.setRecipeImage(UIImage(named: "ravioli")!)
+		recipe4.name = "Creamy Spinach Sweet Potato Noodles with Cashew Garlic Sauce"
+		recipe4.setRecipeImage(UIImage(named: "noodles")!)
 		recipe4.category = allCategories[3]
-		recipe4.servings = 4
+		recipe4.servings = 6
 		recipe4.time = 30
-		recipe4.ingredients = "-Kosher salt\n-Pepper\n-1 9-oz package small cheese ravioli\n-2 tbsp olive oil\n-1 1/4 lb skinless, boneless chicken breast cut into chunks\n-8 oz white mushrooms\n-1 cup halved cherry tomatoes\n-2 sliced garlic cloves\n-2 tbsp red wine vinegar\n-1/3 cup chicken broth\n-2 tbsp grated parmesan cheese\n-1/4 cup chopped fresh parsley and basil"
-		recipe4.directions = "-Bring a pot of salted water to a boil. Add the ravioli and cook as the label directs; drain, then drizzle with olive oil and toss.\n-Meanwhile, season the chicken with salt and pepper. Heat 1 tablespoon olive oil in a large nonstick skillet over medium-high heat. Add the chicken; cook, undisturbed, until beginning to brown, about 2 minutes. Continue to cook, stirring, 1 more minute. Transfer to a plate.\n-Heat the remaining 1 tablespoon olive oil in the skillet. Add the mushrooms and cook, undisturbed, until browned in spots, about 2 minutes. Season with salt and continue to cook, stirring, until softened, about 3 more minutes. Stir in the tomatoes, garlic and vinegar and cook until the tomatoes begin to soften, about 2 minutes. Return the chicken to the skillet, then add the ravioli, broth and parmesan; bring to a simmer and cook, stirring occasionally, until the chicken is cooked through, about 4 minutes. Top with the parsley."
-		recipe4.link = "http://www.foodnetwork.com/recipes/food-network-kitchens/skillet-chicken-and-ravioli-recipe.html"
+		recipe4.ingredients = "-1 cup cashews\n-3/4 cup water\n-1/2 Tsp salt\n-1 clove of garlic\n-1 TBS olive oil\n-4 large sweet potatoes, spiralized\n-2 cups of baby spinach\n-a handful of fresh basil leaves, chives, or other herbs\n-grilled chicken (optional, but recommended)\n-1 15 0z. can of chickpeas\n-salt and pepper to taste\n-olive oil for drizzling grated Boar’s Head Gouda Cheese on top (lactose free or you could use regular parmesan or dairy free Go Veggie Parmesan)"
+		recipe4.directions = "-Cover the cashews with water in a bowl and soak for 2 hours or so.\n-Drain and rinse thoroughly. Place in a food processor, I did mine in a VitaMix, and add the 3/4 cup water, salt, and garlic. Blend until very smooth.\n-Heat the oil in a large skillet over high heat. Add the sweet potatoes; toss in the pan for 6-7 minutes with tongs until tender crisp. Reduce heat and add in spinach – it should wilt pretty quickly.  Also add in chickpeas. Let cook for another 6-7 minutes./n-Add all the herbs and half of the sauce to the pan and toss to combine. Add water if the mixture is too sticky. Season generously with salt and pepper, drizzle with olive oil and top with the remaining fresh herbs.\n-If you made grilled chicken or bacon, which I recommend chicken, add it on top at the end and stir. "
+		recipe4.link = "https://holdthecheeseplease.com/2016/03/03/creamy-spinach-sweet-potato-noodles-with-cashew-garlic-sauce/"
 		
 		// 5) Sides
 		let recipe5 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
