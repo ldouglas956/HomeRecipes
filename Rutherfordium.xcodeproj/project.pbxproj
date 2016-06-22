@@ -24,10 +24,10 @@
 		8E77C94E1D0DEAC8003B0B9D /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77C94C1D0DEAC8003B0B9D /* AkiraTextField.swift */; };
 		8E77C94F1D0DEAC8003B0B9D /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77C94D1D0DEAC8003B0B9D /* TextFieldsEffects.swift */; };
 		8E77C9511D0E0006003B0B9D /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77C9501D0E0006003B0B9D /* CustomPicker.swift */; };
+		8E81A9BE1D130E2E001E9C12 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E81A9BD1D130E2E001E9C12 /* CloudKit.framework */; };
 		8EB668321CE6821100E0A75A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB668311CE6821100E0A75A /* CategoryCell.swift */; };
 		8EB668341CEA5AA500E0A75A /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB668331CEA5AA400E0A75A /* RecipeCell.swift */; };
 		8ECAD5471D09EB9500B8995D /* RotatedImageFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD5461D09EB9500B8995D /* RotatedImageFix.swift */; };
-		8ECAD5621D0A905900B8995D /* CustomUINavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD5611D0A905900B8995D /* CustomUINavController.swift */; };
 		8ED29A6C1D07D0B100175CAF /* SampleRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED29A6B1D07D0B100175CAF /* SampleRecipes.swift */; };
 		8ED29A6E1D07D93800175CAF /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED29A6D1D07D93800175CAF /* Categories.swift */; };
 /* End PBXBuildFile section */
@@ -73,10 +73,11 @@
 		8E77C94C1D0DEAC8003B0B9D /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		8E77C94D1D0DEAC8003B0B9D /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		8E77C9501D0E0006003B0B9D /* CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		8E81A9BA1D122007001E9C12 /* Rutherfordium.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Rutherfordium.entitlements; sourceTree = "<group>"; };
+		8E81A9BD1D130E2E001E9C12 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8EB668311CE6821100E0A75A /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8EB668331CEA5AA400E0A75A /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		8ECAD5461D09EB9500B8995D /* RotatedImageFix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatedImageFix.swift; sourceTree = "<group>"; };
-		8ECAD5611D0A905900B8995D /* CustomUINavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUINavController.swift; sourceTree = "<group>"; };
 		8ED29A6B1D07D0B100175CAF /* SampleRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleRecipes.swift; sourceTree = "<group>"; };
 		8ED29A6D1D07D93800175CAF /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E81A9BE1D130E2E001E9C12 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +121,7 @@
 		8E769DF81CE59D3E0015139A = {
 			isa = PBXGroup;
 			children = (
+				8E81A9BD1D130E2E001E9C12 /* CloudKit.framework */,
 				8E769E031CE59D3F0015139A /* Rutherfordium */,
 				8E769E1B1CE59D3F0015139A /* RutherfordiumTests */,
 				8E769E261CE59D3F0015139A /* RutherfordiumUITests */,
@@ -139,6 +142,7 @@
 		8E769E031CE59D3F0015139A /* Rutherfordium */ = {
 			isa = PBXGroup;
 			children = (
+				8E81A9BA1D122007001E9C12 /* Rutherfordium.entitlements */,
 				8E769E381CE59E270015139A /* MODEL */,
 				8E769E361CE59E1C0015139A /* VIEW */,
 				8E769E371CE59E220015139A /* CONTROLLER */,
@@ -184,7 +188,6 @@
 				8EB668311CE6821100E0A75A /* CategoryCell.swift */,
 				8EB668331CEA5AA400E0A75A /* RecipeCell.swift */,
 				8ECAD5461D09EB9500B8995D /* RotatedImageFix.swift */,
-				8ECAD5611D0A905900B8995D /* CustomUINavController.swift */,
 				8E77C9521D0E0010003B0B9D /* TextFieldsEffects */,
 				8E77C9501D0E0006003B0B9D /* CustomPicker.swift */,
 			);
@@ -291,6 +294,11 @@
 					8E769E001CE59D3F0015139A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = CEZ4N6DZ75;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					8E769E171CE59D3F0015139A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -369,7 +377,6 @@
 				8E19ACB81D05515F00CD0993 /* Category+CoreDataProperties.swift in Sources */,
 				8E19ACB91D05515F00CD0993 /* Recipe+CoreDataProperties.swift in Sources */,
 				8E116A8E1CF00D950032C39A /* Category.swift in Sources */,
-				8ECAD5621D0A905900B8995D /* CustomUINavController.swift in Sources */,
 				8EB668321CE6821100E0A75A /* CategoryCell.swift in Sources */,
 				8ED29A6E1D07D93800175CAF /* Categories.swift in Sources */,
 			);
@@ -513,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rutherfordium/Rutherfordium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Rutherfordium/Info.plist;
@@ -528,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rutherfordium/Rutherfordium.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Rutherfordium/Info.plist;

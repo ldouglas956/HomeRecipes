@@ -50,11 +50,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-125" y="353"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Launch1" width="1920" height="786"/>
-        <image name="Launch3" width="1920" height="1280"/>
+        <image name="Launch1" width="960" height="393"/>
+        <image name="Launch3" width="960" height="640"/>
     </resources>
 </document>

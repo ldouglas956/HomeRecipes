@@ -89,6 +89,7 @@ class AddRecipeVC: UIViewController, UINavigationControllerDelegate, UIPickerVie
 			
 			if let name = recipe.name {
 				nameField.text = name
+				self.navigationItem.title = name
 			}
 			if let time = recipe.time {
 				timeField.text = "\(time)"
@@ -254,6 +255,7 @@ class AddRecipeVC: UIViewController, UINavigationControllerDelegate, UIPickerVie
 		}
 		
 		pickerLabel?.text = categories[row].title!.substringFromIndex(categories[row].title!.startIndex.advancedBy(3))
+		pickerLabel?.textColor = UIColor.whiteColor()
 		return pickerLabel!
 	}
 	
@@ -265,6 +267,9 @@ class AddRecipeVC: UIViewController, UINavigationControllerDelegate, UIPickerVie
 	func configurePickerView() {
 		categoryPicker.backgroundColor = UIColor.clearColor()
 		
+		
+		//  Change text color
+		// Change separator bar color
 	}
 	
 	// Keyboard Function
@@ -329,7 +334,8 @@ class AddRecipeVC: UIViewController, UINavigationControllerDelegate, UIPickerVie
 				recipe.directions = directions
 			}
 			if let photo = mealPhoto.image {
-				recipe.setRecipeImage(photo)
+				let savePhoto = photo.scaleAndRotateImageUsingOrientation()
+				recipe.setRecipeImage(savePhoto)
 			}
 			
 			recipe.category = categories[categoryPicker.selectedRowInComponent(0)]

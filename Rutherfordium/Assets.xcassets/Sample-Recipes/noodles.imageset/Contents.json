@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "noodles.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ravioli.jpeg",
       "scale" : "2x"
     },
     {
