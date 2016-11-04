@@ -12,12 +12,12 @@ import CoreData
 
 class Category: NSManagedObject {
 
-	func setCatImage(img: UIImage) {
+	func setCatImage(_ img: UIImage) {
 		let data = UIImagePNGRepresentation(img)
 		self.catPhoto = data
 	}
 	func getCatImage() -> UIImage {
-		let img = UIImage(data: self.catPhoto!)
+		let img = UIImage(data: self.catPhoto! as Data)
 		return img!
 	}
 	

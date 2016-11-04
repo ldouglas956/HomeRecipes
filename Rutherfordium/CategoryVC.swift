@@ -14,7 +14,7 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 	// MARK: Properties
 	@IBOutlet weak var tableView: UITableView!
 	
-	var fetchedResultsController: NSFetchedResultsController!
+	var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
 	var categories = Categories()
 	var allCategories = [Category]()
 	var sampleRecipes = SampleRecipes()
@@ -32,14 +32,14 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 		
 		
 		fetchCategories()
-		if fetchedResultsController.fetchedObjects?.count == 0 {
+		if fetchedResultsController?.fetchedObjects?.count == 0 {
 			categories.initializeCategories()
 			fetchCategories()
 			sampleRecipes.generateTestData(allCategories)
 		}
     }
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		tableView.reloadData()
 	}
 	
@@ -65,11 +65,11 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 //		navigationItem.titleView = imageView
 		
 		// Text
-		self.navigationController?.navigationBar.translucent = true
+		self.navigationController?.navigationBar.isTranslucent = true
 		self.navigationItem.title = "Home Recipes"
 		self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 0/255, green: 0/255, blue: 0/255, alpha: 1), NSFontAttributeName: UIFont(name: "Hiragino Mincho ProN W6", size: 30.0)!]
 		self.navigationController!.navigationBar.tintColor = UIColor(colorLiteralRed: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-		self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
+		self.navigationController?.navigationBar.backgroundColor = UIColor.clear
 		self.navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 157/255, green: 181/255, blue: 171/255, alpha: 1)
 	}
 
@@ -77,7 +77,7 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 	
 	// MARK: Core Data Fetch
 	func fetchCategories() {
-		let fetchRequest = NSFetchRequest(entityName: "Category")
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
 		let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
 		fetchRequest.sortDescriptors = [sortDescriptor]
 		
@@ -87,8 +87,8 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 		fetchedResultsController = controller
 		
 		do {
-			try self.fetchedResultsController.performFetch()
-			allCategories = fetchedResultsController.fetchedObjects as! [Category]
+			try self.fetchedResultsController?.performFetch()
+			allCategories = fetchedResultsController?.fetchedObjects as! [Category]
 		} catch {
 			let error = error as NSError
 			print("\(error), \(error.userInfo)")
@@ -98,44 +98,44 @@ class CategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 	
 	
 	// MARK: TableView Code
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return allCategories.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryCell
-		if let category = fetchedResultsController.objectAtIndexPath(indexPath) as? Category {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+		if let category = fetchedResultsController?.object(at: indexPath) as? Category {
 			cell.configureCell(category)
-			cell.selectionStyle = UITableViewCellSelectionStyle.None
+			cell.selectionStyle = UITableViewCellSelectionStyle.none
 		}
 
 		return CategoryCell()
 	}
 
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		UITableViewCellSelectionStyle.None
-		let selectedCell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		//UITableViewCellSelectionStyle.none
+		let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
 		selectedCell.contentView.backgroundColor = UIColor(colorLiteralRed: 157/255, green: 181/255, blue: 178/255, alpha: 1)
 		
-		tableView.deselectRowAtIndexPath(indexPath, animated: true)
-		if let objs = fetchedResultsController.fetchedObjects where objs.count > 0 {
-			let item = objs[indexPath.row] as! Category
-			categorySelectionIndex = indexPath.row
+		tableView.deselectRow(at: indexPath, animated: true)
+		if let objs = fetchedResultsController?.fetchedObjects , objs.count > 0 {
+			let item = objs[(indexPath as NSIndexPath).row] as! Category
+			categorySelectionIndex = (indexPath as NSIndexPath).row
 
-			performSegueWithIdentifier("ShowListRecipes", sender: item)
+			performSegue(withIdentifier: "ShowListRecipes", sender: item)
 		}
 	}
 	
 	
 	
 	// MARK: NAVIGATION
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "ShowListRecipes" {
-			let vc = segue.destinationViewController as! RecipesVC
+			let vc = segue.destination as! RecipesVC
 			vc.categorySelectionIndex = categorySelectionIndex
 		} else if segue.identifier == "ModalAddRecipe" {
 			

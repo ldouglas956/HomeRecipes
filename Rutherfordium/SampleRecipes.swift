@@ -25,10 +25,10 @@ class SampleRecipes {
 	// 8) Snacks
 	// 9) Drinks
 	
-	func generateTestData(allCategories: [Category]) {
+	func generateTestData(_ allCategories: [Category]) {
 		
 		// 1) Appetizers
-		let recipe1 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe1 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe1.name = "Stuffed Mushrooms"
 		recipe1.setRecipeImage(UIImage(named: "mushrooms")!)
 		recipe1.category = allCategories[0]
@@ -39,7 +39,7 @@ class SampleRecipes {
 		recipe1.link = "http://allrecipes.com/recipe/15184/mouth-watering-stuffed-mushrooms/?internalSource=staff%20pick&referringId=76&referringContentType=recipe%20hub"
 		
 		// 2) Soup / Chili
-		let recipe2 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe2 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe2.name = "Chicken Noodle Soup"
 		recipe2.setRecipeImage(UIImage(named: "chickenSoup")!)
 		recipe2.category = allCategories[1]
@@ -50,7 +50,7 @@ class SampleRecipes {
 		recipe2.link = "http://www.marthastewart.com/1085620/one-pot-classic-chicken-noodle-soup"
 		
 		// 3) Salad
-		let recipe3 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe3 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe3.name = "Basil Pesto Pasta Salad"
 		recipe3.setRecipeImage(UIImage(named: "pastaSalad")!)
 		recipe3.category = allCategories[2]
@@ -61,7 +61,7 @@ class SampleRecipes {
 		recipe3.link = "https://holdthecheeseplease.com/2016/06/18/basil-pesto-pasta-salad/"
 		
 		// 4) Main Course
-		let recipe4 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe4 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe4.name = "Creamy Spinach Sweet Potato Noodles with Cashew Garlic Sauce"
 		recipe4.setRecipeImage(UIImage(named: "noodles")!)
 		recipe4.category = allCategories[3]
@@ -72,7 +72,7 @@ class SampleRecipes {
 		recipe4.link = "https://holdthecheeseplease.com/2016/03/03/creamy-spinach-sweet-potato-noodles-with-cashew-garlic-sauce/"
 		
 		// 5) Sides
-		let recipe5 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe5 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe5.name = "Baked Macaroni"
 		recipe5.setRecipeImage(UIImage(named: "macaroni")!)
 		recipe5.category = allCategories[4]
@@ -83,7 +83,7 @@ class SampleRecipes {
 		recipe5.link = "http://www.countryliving.com/food-drinks/recipes/a5098/baked-macaroni-recipe-clx0514/"
 		
 		// 6) Dessert
-		let recipe6 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe6 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe6.name = "Chocolate Chip Cookies"
 		recipe6.setRecipeImage(UIImage(named: "cookie")!)
 		recipe6.category = allCategories[5]
@@ -94,7 +94,7 @@ class SampleRecipes {
 		recipe6.link = "http://www.bettycrocker.com/recipes/ultimate-chocolate-chip-cookies/77c14e03-d8b0-4844-846d-f19304f61c57"
 		
 		// 7) Breakfast
-		let recipe7 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe7 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe7.name = "Flag Toast"
 		recipe7.setRecipeImage(UIImage(named: "toast")!)
 		recipe7.category = allCategories[6]
@@ -105,7 +105,7 @@ class SampleRecipes {
 		recipe7.link = "http://allrecipes.com/recipe/242404/red-white-and-blue-flag-toast/?internalSource=rotd&referringId=78&referringContentType=recipe%20hub"
 		
 		// 8) Snacks
-		let recipe8 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe8 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe8.name = "Trail Mix"
 		recipe8.setRecipeImage(UIImage(named: "trailMix")!)
 		recipe8.category = allCategories[7]
@@ -116,7 +116,7 @@ class SampleRecipes {
 		recipe8.link = "http://www.cheatsheet.com/culture/5-healthy-homemade-trail-mix-recipes-that-go-the-distance.html/?a=viewall"
 		
 		// 9) Drinks
-		let recipe9 = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: ad.managedObjectContext) as! Recipe
+		let recipe9 = NSEntityDescription.insertNewObject(forEntityName: "Recipe", into: ad.managedObjectContext) as! Recipe
 		recipe9.name = "Irish Coffee"
 		recipe9.setRecipeImage(UIImage(named: "coffee")!)
 		recipe9.category = allCategories[8]

@@ -14,8 +14,8 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 	// MARK: Properties
 	@IBOutlet weak var tableView: UITableView!
 	
-	var fetchedRecipeController: NSFetchedResultsController!
-	var fetchedCategoryController: NSFetchedResultsController!
+	var fetchedRecipeController: NSFetchedResultsController<NSFetchRequestResult>?
+	var fetchedCategoryController: NSFetchedResultsController<NSFetchRequestResult>?
 	
 	var sampleRecipes = SampleRecipes()
 	var allCategories = [Category]()
@@ -37,7 +37,7 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 		selectedCategory = allCategories[categorySelectionIndex!]
 	}
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
 		attemptRecipeFetch()
 		setTitle()
@@ -48,14 +48,14 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 	
 	// MARK: Configure Views
 	func setTitle() {
-		self.navigationItem.title = selectedCategory!.title!.substringFromIndex(selectedCategory!.title!.startIndex.advancedBy(3))
+		self.navigationItem.title = selectedCategory!.title!.substring(from: selectedCategory!.title!.characters.index(selectedCategory!.title!.startIndex, offsetBy: 3))
 		self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(colorLiteralRed: 0/255, green: 0/255, blue: 0/255, alpha: 1), NSFontAttributeName: UIFont(name: "Hiragino Mincho ProN W6", size: 20.0)!]
 	}
 	
 	
 	// MARK: Core Data Fetch
 	func attemptRecipeFetch() {
-		let fetchRecipeRequest = NSFetchRequest(entityName: "Recipe")
+		let fetchRecipeRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		fetchRecipeRequest.sortDescriptors = [sortDescriptor]
 		
@@ -63,9 +63,9 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 		fetchedRecipeController = controller
 		
 		do {
-			try self.fetchedRecipeController.performFetch()
-			let allRecipes = fetchedRecipeController.fetchedObjects as! [Recipe]
-			recipesOfCategory = allRecipes.filter { NSPredicate(format: "category = %@", selectedCategory!).evaluateWithObject($0) }
+			try self.fetchedRecipeController?.performFetch()
+			let allRecipes = fetchedRecipeController?.fetchedObjects as! [Recipe]
+			recipesOfCategory = allRecipes.filter { NSPredicate(format: "category = %@", selectedCategory!).evaluate(with: $0) }
 		} catch {
 			let error = error as NSError
 			print("\(error), \(error.userInfo)")
@@ -73,7 +73,7 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 	}
 	
 	func attemptCategoryFetch() {
-		let fetchCategoryRequest = NSFetchRequest(entityName: "Category")
+		let fetchCategoryRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
 		let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
 		fetchCategoryRequest.sortDescriptors = [sortDescriptor]
 		
@@ -81,8 +81,8 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 		fetchedCategoryController = controller
 		
 		do {
-			try self.fetchedCategoryController.performFetch()
-			allCategories = fetchedCategoryController.fetchedObjects as! [Category]
+			try self.fetchedCategoryController?.performFetch()
+			allCategories = fetchedCategoryController?.fetchedObjects as! [Category]
 		} catch {
 			let error = error as NSError
 			print("\(error), \(error.userInfo)")
@@ -92,55 +92,57 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 	
 	
 	// MARK: NSFetchedResultsController Code
-	func controllerWillChangeContent(controller: NSFetchedResultsController) {
+	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.beginUpdates()
 	}
 	
-	func controllerDidChangeContent(controller: NSFetchedResultsController) {
+	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.reloadData()
 		tableView.endUpdates()
 	}
 	
-	func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
 		
 		switch(type) {
-		case .Insert:
+		case .insert:
 			if let indexPath = newIndexPath {
-				tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+				tableView.insertRows(at: [indexPath], with: .fade)
 			}; break
-		case .Delete:
+		case .delete:
 			if let indexPath = indexPath {
-				tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+				tableView.deleteRows(at: [indexPath], with: .fade)
 			}; break
-		case .Update:
+		case .update:
 			if let indexPath = indexPath {
-				let cell = tableView.cellForRowAtIndexPath(indexPath) as! RecipeCell
+				let cell = tableView.cellForRow(at: indexPath) as! RecipeCell
 				configureCell(cell, indexPath: indexPath)
 			}; break
-		case .Move:
+		case .move:
 			if let indexPath = indexPath {
-				tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+				tableView.deleteRows(at: [indexPath], with: .fade)
 			}
 			if let newIndexPath = newIndexPath {
-				tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+				tableView.insertRows(at: [newIndexPath], with: .fade)
 			}; break
 		}
 	}
 	
-	func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
 		switch(type) {
-		case .Insert:
-			let sectionIndexSet = NSIndexSet(index: sectionIndex)
-			self.tableView.insertSections(sectionIndexSet, withRowAnimation: UITableViewRowAnimation.Fade)
-			self.tableView.reloadSections(sectionIndexSet, withRowAnimation: .Automatic)
-		case .Delete:
-			let sectionIndexSet = NSIndexSet(index: sectionIndex)
-			self.tableView.deleteSections(sectionIndexSet, withRowAnimation: UITableViewRowAnimation.Fade)
-		case .Update:
-			let sectionIndexSet = NSIndexSet(index: sectionIndex)
-			self.tableView.reloadSections(sectionIndexSet, withRowAnimation: .Automatic)
-		default:
-			""
+		case .insert:
+			let sectionIndexSet = IndexSet(integer: sectionIndex)
+			self.tableView.insertSections(sectionIndexSet, with: UITableViewRowAnimation.fade)
+			self.tableView.reloadSections(sectionIndexSet, with: .automatic)
+		case .delete:
+			let sectionIndexSet = IndexSet(integer: sectionIndex)
+			self.tableView.deleteSections(sectionIndexSet, with: UITableViewRowAnimation.fade)
+		case .update:
+			let sectionIndexSet = IndexSet(integer: sectionIndex)
+			self.tableView.reloadSections(sectionIndexSet, with: .automatic)
+		case .move: break
+			
+//		default:
+//			""
 		}
 		
 	}
@@ -148,49 +150,49 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 	
 	
 	// MARK: UITableView Code
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return recipesOfCategory.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("RecipeCell", forIndexPath: indexPath) as! RecipeCell
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as! RecipeCell
 		configureCell(cell, indexPath: indexPath)
 		
 		return cell
 	}
 	
-	func configureCell(cell: RecipeCell, indexPath: NSIndexPath) {
-		cell.configureCell(recipesOfCategory[indexPath.row])
+	func configureCell(_ cell: RecipeCell, indexPath: IndexPath) {
+		cell.configureCell(recipesOfCategory[(indexPath as NSIndexPath).row])
 	}
 	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let item = recipesOfCategory[indexPath.row]
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let item = recipesOfCategory[(indexPath as NSIndexPath).row]
 		
-		performSegueWithIdentifier("ShowEditRecipe", sender: item)
+		performSegue(withIdentifier: "ShowEditRecipe", sender: item)
 	}
 	
-	func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}
 	
-	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-		deleteIndex = indexPath.row
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		deleteIndex = (indexPath as NSIndexPath).row
 		areYouSureAlert()
 	}
 	
 	func areYouSureAlert() {
-		let alertController = UIAlertController(title: "Delete this recipe?", message: "", preferredStyle: .Alert)
+		let alertController = UIAlertController(title: "Delete this recipe?", message: "", preferredStyle: .alert)
 
-		let firstAction = UIAlertAction(title: "Oops, Keep It", style: UIAlertActionStyle.Default, handler: nil)
-		let secondAction = UIAlertAction(title: "Delete It", style: UIAlertActionStyle.Destructive, handler: { action in
+		let firstAction = UIAlertAction(title: "Oops, Keep It", style: UIAlertActionStyle.default, handler: nil)
+		let secondAction = UIAlertAction(title: "Delete It", style: UIAlertActionStyle.destructive, handler: { action in
 			let context = ad.managedObjectContext
-			context.deleteObject(self.recipesOfCategory[self.deleteIndex!])
+			context.delete(self.recipesOfCategory[self.deleteIndex!])
 			
-			self.recipesOfCategory.removeAtIndex(self.deleteIndex!)
+			self.recipesOfCategory.remove(at: self.deleteIndex!)
 			do {
 				try context.save()
 			} catch {
@@ -201,19 +203,19 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 		
 		alertController.addAction(firstAction)
 		alertController.addAction(secondAction)
-		self.presentViewController(alertController, animated: true, completion: {})
+		self.present(alertController, animated: true, completion: {})
 	}
 	
 	
 	
 	// MARK: NAVIGATION
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "ShowEditRecipe" {
-			let vc = segue.destinationViewController as! AddRecipeVC
+			let vc = segue.destination as! AddRecipeVC
 			vc.recipeToEdit = sender as? Recipe
 			vc.categorySelectionIndex = categorySelectionIndex
 		} else if segue.identifier == "ModalAddRecipe" {
-			let nc = segue.destinationViewController as! UINavigationController
+			let nc = segue.destination as! UINavigationController
 			let vc = nc.topViewController as! AddRecipeVC
 			vc.categorySelectionIndex = categorySelectionIndex
 			vc.modallyPresented = true
@@ -227,11 +229,11 @@ class RecipesVC: UIViewController, UITableViewDataSource, UITableViewDelegate, N
 		let context = ad.managedObjectContext
 		let coord = ad.persistentStoreCoordinator
 		
-		let fetchRequest = NSFetchRequest(entityName: "Recipe")
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
 		let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 		
 		do {
-			try coord.executeRequest(deleteRequest, withContext: context)
+			try coord.execute(deleteRequest, with: context)
 		} catch let error as NSError {
 			debugPrint(error)
 		}

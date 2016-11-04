@@ -14,7 +14,7 @@ import CoreData
 
 extension Category {
 
-    @NSManaged var catPhoto: NSData?
+    @NSManaged var catPhoto: Data?
     @NSManaged var title: String?
     @NSManaged var recipes: NSSet?
 

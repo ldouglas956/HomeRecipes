@@ -12,12 +12,12 @@ import CoreData
 
 class Recipe: Category {
 
-	func setRecipeImage(img: UIImage) {
+	func setRecipeImage(_ img: UIImage) {
 		let data = UIImagePNGRepresentation(img)
 		self.photo = data
 	}
 	func getRecipeImage() -> UIImage {
-		let img = UIImage(data: self.photo!)
+		let img = UIImage(data: self.photo! as Data)
 		return img!
 	}
 

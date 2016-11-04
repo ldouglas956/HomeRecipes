@@ -11,21 +11,21 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
 	
-	@IBOutlet private weak var catTitle: UILabel!
-	@IBOutlet private weak var catCount: UILabel!
-	@IBOutlet private weak var catImage: UIImageView!
+	@IBOutlet fileprivate weak var catTitle: UILabel!
+	@IBOutlet fileprivate weak var catCount: UILabel!
+	@IBOutlet fileprivate weak var catImage: UIImageView!
 	
 	
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 	
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 	
-	func configureCell(category: Category) {
-		catTitle.text = category.title!.substringFromIndex(category.title!.startIndex.advancedBy(3))
+	func configureCell(_ category: Category) {
+		catTitle.text = category.title!.substring(from: category.title!.characters.index(category.title!.startIndex, offsetBy: 3))
 		catImage.image = category.getCatImage()
 		catCount.text = ""
 	}

@@ -10,8 +10,8 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
 	
-	@IBOutlet private weak var recipeName: UILabel!
-	@IBOutlet private weak var recipeImage: UIImageView!
+	@IBOutlet fileprivate weak var recipeName: UILabel!
+	@IBOutlet fileprivate weak var recipeImage: UIImageView!
 	
 
     override func awakeFromNib() {
@@ -20,11 +20,11 @@ class RecipeCell: UITableViewCell {
 		recipeImage.clipsToBounds = true
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 	
-	func configureCell(recipe: Recipe) {
+	func configureCell(_ recipe: Recipe) {
 		recipeName.text = recipe.name
 		recipeImage.image = recipe.getRecipeImage()
 	}

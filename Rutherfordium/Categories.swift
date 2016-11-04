@@ -12,16 +12,16 @@ import CoreData
 class Categories {
 	
 	func initializeCategories() {
-		let category1 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category2 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category3 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category4 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category5 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category6 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category7 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category8 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category9 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
-		let category10 = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: ad.managedObjectContext) as! Category
+		let category1 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category2 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category3 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category4 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category5 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category6 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category7 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category8 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category9 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
+		let category10 = NSEntityDescription.insertNewObject(forEntityName: "Category", into: ad.managedObjectContext) as! Category
 		
 		category1.title = "7) Breakfast"
 		category2.title = "6) Dessert"
